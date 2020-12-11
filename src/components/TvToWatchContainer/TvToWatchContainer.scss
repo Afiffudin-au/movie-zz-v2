@@ -1,0 +1,34 @@
+.tvToWatchContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .tvToWatchContainer-items{
+    padding-left: 10px;
+    padding-top: 30px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    will-change: transform;
+    position: relative;
+  }
+}
+@media(min-width: 577px){
+  .tvToWatchContainer{
+    min-height: 400px;
+    .tvToWatchContainer-items{
+      height: 350px;
+    }
+  }
+}
+@media(min-width:321px) and (max-width : 576px){
+  .tvToWatchContainer{
+    height: 280px;
+    .tvToWatchContainer-items{
+      height: 280px;
+    }
+  }
+}
