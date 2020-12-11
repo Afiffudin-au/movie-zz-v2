@@ -8,9 +8,9 @@ import { useGetPopular } from '../../usePopular/useGetPopular';
 function PopularGroup() {
   const [value,setValue] = React.useState(0);
   const {getMoviePopular,getTvPopular,getMoviePopularInTheater} = useGetPopular()
-  // const refGetMoviePopular = useRef(getMoviePopular)
+  const refGetMoviePopular = useRef(getMoviePopular)
   useEffect(() => {
-    // refGetMoviePopular.current()
+    refGetMoviePopular.current()
   },[])
   return (
     <div className="popularGroup">

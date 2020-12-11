@@ -3,15 +3,24 @@ import { createSlice } from '@reduxjs/toolkit';
 export const movieSlice = createSlice({
   name: 'movie',
   initialState: {
-    value: 0,
+    popularBlock : {
+      populars : [],
+      loading : null
+    },
+   
   },
   reducers: {
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    addPopular: (state, action) => {
+      state.popularBlock.loading = action.payload.loading
+      if(action.payload.loading){
+        state.popularBlock.populars = []
+        return
+      }
+      state.popularBlock.populars = action.payload.dataPopulars;
     },
   },
 });
 
-export const { increment, decrement, incrementByAmount } = movieSlice.actions;
-export const selectCount = state => state.counter.value;
+export const { addPopular } = movieSlice.actions;
+export const selectPopularBlock= state => state.movies.popularBlock;
 export default movieSlice.reducer;

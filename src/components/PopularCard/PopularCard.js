@@ -1,24 +1,25 @@
 import React from 'react'
+import LazyLoad from 'react-lazyload'
 import { LightTooltip } from '../LightTooltip/LightTooltip'
 import './PopularCard.scss'
-function PopularCard() {
+function PopularCard({URL,id,releaseDate,originalTitle,posterPath}) {
   const handleDetail = ()=>{  
-
+    console.log('detail')
   }
   return (
     <div className="popularCard">
       <div onClick={handleDetail} className="popularCard-content" >
-         {/* <LazyLoad 
+        <LazyLoad 
           width={150}
           height={200}
-          > */}
-        <LightTooltip enterDelay={10} title={`Movie Detail`} placement="top" arrow>
-          <img src="https://image.tmdb.org/t/p/original/4n8QNNdk4BOX9Dslfbz5Dy6j1HK.jpg" alt=""/>
-        </LightTooltip>
-        {/* </LazyLoad> */}
+          >
+          <LightTooltip enterDelay={10} title={`Movie Detail`} placement="top" arrow>
+            <img src={posterPath} alt={''}/>
+          </LightTooltip>
+        </LazyLoad>
         <div className="popularCard_desc">
-          <h1>{'titledddddddddddd'}</h1>
-          <p>{'12-12-2020'}</p>
+          <h1>{originalTitle}</h1>
+          <p>{releaseDate}</p>
         </div>
       </div>
     </div>

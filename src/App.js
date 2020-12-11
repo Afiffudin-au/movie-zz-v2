@@ -13,13 +13,12 @@ function App() {
       <div className="App">
         <Navbar/>
         <Switch>
-          <Route path='/'>
+          <Route path="/">
             <Home/>
           </Route>
         </Switch>
       </div>
     </Router>
-      
   );
 }
 
