@@ -1,0 +1,34 @@
+.popularContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .popularContainer-items{
+    padding-left: 10px;
+    padding-top: 30px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    will-change: transform;
+    position: relative;
+  }
+}
+@media(min-width:321px){
+  .popularContainer{
+    min-height: 400px;
+    .popularContainer-items{
+      height: 350px;
+    }
+  }
+}
+@media(max-width:321px){
+  .popularContainer{
+    height: 250px;
+    .popularContainer-items{
+      height: 250px;
+    }
+  }
+}
