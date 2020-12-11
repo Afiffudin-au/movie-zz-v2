@@ -1,0 +1,28 @@
+.movieToWatchGroup{
+  padding: 10px;
+  .movieToWatchGroupWrap{
+    display: flex;
+    align-items: center;
+    h1{
+      font-weight: 600;
+      font-size: 25px;
+    }
+    .MuiBottomNavigation-root{
+      .MuiButtonBase-root.MuiBottomNavigationAction-root.Mui-selected{
+        color: #448aff !important;
+      }
+      button{
+        color: #607d8b;
+        outline: 0;
+      }
+    }
+   
+  }
+}
+@media (min-width: 320px) and (max-width: 768.98px) { 
+  .movieToWatchGroup{
+    .movieToWatchGroupWrap{
+      flex-direction: column;
+    }
+  }
+}

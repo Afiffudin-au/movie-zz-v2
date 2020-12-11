@@ -1,14 +1,14 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 import { LightTooltip } from '../LightTooltip/LightTooltip'
-import './PopularCard.scss'
-function PopularCard({URL,id,releaseDate,originalTitle,posterPath}) {
+import './Card.scss'
+function Card({id,releaseDate,originalTitle,posterPath}) {
   const handleDetail = ()=>{  
     console.log('detail')
   }
   return (
-    <div className="popularCard">
-      <div onClick={handleDetail} className="popularCard-content" >
+    <div className="Card">
+      <div onClick={handleDetail} className="Card-content" >
         <LazyLoad 
           width={150}
           height={200}
@@ -17,7 +17,7 @@ function PopularCard({URL,id,releaseDate,originalTitle,posterPath}) {
             <img src={posterPath} alt={''}/>
           </LightTooltip>
         </LazyLoad>
-        <div className="popularCard_desc">
+        <div className="Card_desc">
           <h1>{originalTitle}</h1>
           <p>{releaseDate}</p>
         </div>
@@ -26,4 +26,4 @@ function PopularCard({URL,id,releaseDate,originalTitle,posterPath}) {
   )
 }
 
-export default PopularCard
+export default Card
