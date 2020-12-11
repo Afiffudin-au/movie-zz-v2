@@ -10,6 +10,10 @@ export const movieSlice = createSlice({
     movieToWatchBlock : {
       movieToWatch : [],
       loading : null
+    },
+    tvToWatchBlock : {
+      tvToWatch : [],
+      loading : null
     }
    
   },
@@ -29,11 +33,20 @@ export const movieSlice = createSlice({
         return
       }
       state.movieToWatchBlock.movieToWatch = action.payload.dataMovieToWatch;
+    },
+    addTvToWatch : (state,action)=>{
+      state.tvToWatchBlock.loading = action.payload.loading
+      if(action.payload.loading){
+        state.tvToWatchBlock.tvToWatch = []
+        return
+      }
+      state.tvToWatchBlock.tvToWatch = action.payload.datatvToWatch;
     }
   },
 });
 
-export const { addPopular ,addMovieToWatch} = movieSlice.actions;
+export const { addPopular ,addMovieToWatch,addTvToWatch} = movieSlice.actions;
 export const selectPopularBlock= state => state.movies.popularBlock;
 export const selectMovieToWatchBlock= state => state.movies.movieToWatchBlock;
+export const selectTvToWatchBlock= state => state.movies.tvToWatchBlock;
 export default movieSlice.reducer;

@@ -7,7 +7,6 @@ import Card from '../Card/Card'
 import './MovieToWatchContainer.scss'
 function MovieToWatchContainer() {
   const {movieToWatch,loading} = useSelector(selectMovieToWatchBlock)
-  console.log(movieToWatch)
   return (
     <>
     {
