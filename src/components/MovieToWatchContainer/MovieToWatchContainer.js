@@ -20,7 +20,7 @@ function MovieToWatchContainer() {
       <div className="movieToWatchContainer-items">
         {
           movieToWatch?.results?.map((item,index)=>(
-            <Card id={item.id} releaseDate={item.release_date || item.first_air_date} originalTitle={item.original_title || item.original_name} posterPath={`${process.env.REACT_APP_POSTER_URL}${item.poster_path}`} key={item.id} />
+            <Card id={item.id} releaseDate={item.release_date || item.first_air_date} originalTitle={item.original_title || item.original_name} posterPath={`${process.env.REACT_APP_POSTER_URL}${item.poster_path}`} voteAverage={item.vote_average || 0} key={item.id} />
           ))
         }
       </div>

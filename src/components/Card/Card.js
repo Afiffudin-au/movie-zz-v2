@@ -1,8 +1,10 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 import { LightTooltip } from '../LightTooltip/LightTooltip'
+import StarRateIcon from '@material-ui/icons/StarRate';
+import {amber} from '@material-ui/core/colors';
 import './Card.scss'
-function Card({id,releaseDate,originalTitle,posterPath}) {
+function Card({id,releaseDate,originalTitle,posterPath,voteAverage}) {
   const handleDetail = ()=>{  
     console.log('detail')
   }
@@ -20,6 +22,10 @@ function Card({id,releaseDate,originalTitle,posterPath}) {
         <div className="Card_desc">
           <h1>{originalTitle}</h1>
           <p>{releaseDate}</p>
+        </div>
+        <div className="Card-star-rate bg-blue-600 rounded-full p-1 flex items-center">
+          <StarRateIcon style={{color : amber[600]}} />
+          <span>{voteAverage}</span>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@
     position: relative;
   }
 }
-@media(min-width:321px){
+@media(min-width: 577px){
   .popularContainer{
     min-height: 400px;
     .popularContainer-items{
@@ -24,11 +24,11 @@
     }
   }
 }
-@media(max-width:321px){
+@media(min-width:321px) and (max-width : 576px){
   .popularContainer{
-    height: 250px;
+    height: 280px;
     .popularContainer-items{
-      height: 250px;
+      height: 280px;
     }
   }
 }

@@ -16,7 +16,7 @@
     position: relative;
   }
 }
-@media(min-width:321px){
+@media(min-width:577px){
   .movieToWatchContainer{
     min-height: 400px;
     .movieToWatchContainer-items{
@@ -24,11 +24,11 @@
     }
   }
 }
-@media(max-width:321px){
+@media(min-width:321px) and (max-width : 576px){
   .movieToWatchContainer{
-    height: 250px;
+    height: 280px;
     .movieToWatchContainer-items{
-      height: 250px;
+      height: 280px;
     }
   }
 }
