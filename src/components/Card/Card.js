@@ -14,6 +14,7 @@ function Card({styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}) 
         <LazyLoad 
           width={150}
           height={200}
+          once={false}
           >
           <LightTooltip enterDelay={10} title={originalTitle || ''} placement="top" arrow>
             <img src={posterPath} alt={''}/>

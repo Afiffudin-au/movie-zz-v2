@@ -15,7 +15,8 @@ export function useTvToWatch(){
     }).then(res=>{
       dispatch(addTvToWatch({
         loading : false,
-        datatvToWatch : res.data
+        datatvToWatch : res.data,
+        url : res.config.url
       }))
     }).catch(err=>{
       dispatch(addTvToWatch({
@@ -35,7 +36,8 @@ export function useTvToWatch(){
     }).then(res=>{
       dispatch(addTvToWatch({
         loading : false,
-        datatvToWatch : res.data
+        datatvToWatch : res.data,
+        url : res.config.url
       }))
     }).catch(err=>{
       dispatch(addTvToWatch({

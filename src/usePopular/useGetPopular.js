@@ -15,7 +15,8 @@ export function useGetPopular(){
     }).then(res=>{
       dispatch(addPopular({
         loading : false,
-        dataPopulars : res.data
+        dataPopulars : res.data,
+        url : res.config.url
       }))
     }).catch(err=>{
       dispatch(addPopular({
@@ -35,7 +36,8 @@ export function useGetPopular(){
     }).then(res=>{
       dispatch(addPopular({
         loading : false,
-        dataPopulars : res.data
+        dataPopulars : res.data,
+        url : res.config.url
       }))
     }).catch(err=>{
       dispatch(addPopular({
@@ -55,7 +57,8 @@ export function useGetPopular(){
     }).then(res=>{
       dispatch(addPopular({
         loading : false,
-        dataPopulars : res.data
+        dataPopulars : res.data,
+        url : res.config.url
       }))
     }).catch(err=>{
       dispatch(addPopular({

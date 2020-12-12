@@ -14,7 +14,8 @@ export function useGetMovieToWatch(){
     }).then(res=>{
       dispatch(addMovieToWatch({
         loading : false,
-        dataMovieToWatch : res.data
+        dataMovieToWatch : res.data,
+        url : res.config.url
       }))
     }).catch(err=>{
       dispatch(addMovieToWatch({
@@ -34,7 +35,8 @@ export function useGetMovieToWatch(){
     }).then(res=>{
       dispatch(addMovieToWatch({
         loading : false,
-        dataMovieToWatch : res.data
+        dataMovieToWatch : res.data,
+        url : res.config.url
       }))
     }).catch(err=>{
       dispatch(addMovieToWatch({

@@ -4,6 +4,7 @@ import { useState } from "react"
 export function useGetAllMovie(){
   const [dataMovies,setDataMovies] = useState([])
   const [loading,setLoading] = useState(true)
+  const [url,setUrl] = useState('')
   const getAllMovie = (showMore)=>{
     setLoading(true)
     Axios({
@@ -13,6 +14,7 @@ export function useGetAllMovie(){
     }).then(res=>{
       setLoading(false)
       setDataMovies(res.data)
+      setUrl(res.config.url)
     }).catch(err=>{
       setLoading(false)
       alert(err)
@@ -21,6 +23,7 @@ export function useGetAllMovie(){
   return{
     getAllMovie,
     loading,
-    dataMovies
+    dataMovies,
+    url
   }
 }

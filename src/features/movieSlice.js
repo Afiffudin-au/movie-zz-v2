@@ -5,19 +5,23 @@ export const movieSlice = createSlice({
   initialState: {
     popularBlock : {
       populars : [],
-      loading : null
+      loading : null,
+      url : ''
     },
     movieToWatchBlock : {
       movieToWatch : [],
-      loading : null
+      loading : null,
+      url : ''
     },
     tvToWatchBlock : {
       tvToWatch : [],
-      loading : null
+      loading : null,
+      url : ''
     },
     searchResultBlock : {
       multiResults : [],
       loading  : null,
+      url : ''
     },
     urlParamsBlock : {
       query : ''
@@ -27,6 +31,7 @@ export const movieSlice = createSlice({
   reducers: {
     addPopular: (state, action) => {
       state.popularBlock.loading = action.payload.loading
+      state.popularBlock.url = action.payload.url
       if(action.payload.loading){
         state.popularBlock.populars = []
         return
@@ -35,6 +40,7 @@ export const movieSlice = createSlice({
     },
     addMovieToWatch : (state,action)=>{
       state.movieToWatchBlock.loading = action.payload.loading
+      state.movieToWatchBlock.url = action.payload.url
       if(action.payload.loading){
         state.movieToWatchBlock.movieToWatch = []
         return
@@ -43,6 +49,7 @@ export const movieSlice = createSlice({
     },
     addTvToWatch : (state,action)=>{
       state.tvToWatchBlock.loading = action.payload.loading
+      state.tvToWatchBlock.url = action.payload.url
       if(action.payload.loading){
         state.tvToWatchBlock.tvToWatch = []
         return
@@ -51,6 +58,7 @@ export const movieSlice = createSlice({
     },
     addSearchResult : (state,action)=>{
       state.searchResultBlock.loading  = action.payload.loading
+      state.searchResultBlock.url  = action.payload.url
       if(action.payload.loading){
         state.searchResultBlock.multiResults = []
         return
