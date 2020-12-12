@@ -18,6 +18,22 @@
     grid-column-gap: 5px;
     display: grid;
   }
+  .allMoviespagenation{
+    margin: 10px auto;
+    nav{
+      *{
+        outline: 0;
+      }
+      ul{
+        justify-content: center;
+        li{
+          button.Mui-selected{
+            background-color: #ff0e94;
+          }
+        }
+      }
+    }
+  }
 }
 @media (min-width : 320px){
   @include gridCol(3)
