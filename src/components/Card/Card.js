@@ -4,12 +4,12 @@ import { LightTooltip } from '../LightTooltip/LightTooltip'
 import StarRateIcon from '@material-ui/icons/StarRate';
 import {amber} from '@material-ui/core/colors';
 import './Card.scss'
-function Card({id,releaseDate,originalTitle,posterPath,voteAverage}) {
+function Card({styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}) {
   const handleDetail = ()=>{  
     console.log('detail')
   }
   return (
-    <div className="Card">
+    <div className="Card" style={styleProps}>
       <div onClick={handleDetail} className="Card-content" >
         <LazyLoad 
           width={150}

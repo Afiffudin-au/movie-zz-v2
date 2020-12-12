@@ -1,4 +1,5 @@
 import React from 'react'
+import AllMovies from '../AllMovies/AllMovies'
 import Banner from '../Banner/Banner'
 import MovieToWatchContainer from '../MovieToWatchContainer/MovieToWatchContainer'
 import MovieToWatchGroup from '../MovieToWatchGroup/MovieToWatchGroup'
@@ -20,6 +21,8 @@ function Home() {
 
      <TvToWatchGroup/>
      <TvToWatchContainer/>
+
+     <AllMovies/>
     </>
   )
 }
