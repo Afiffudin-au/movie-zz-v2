@@ -4,7 +4,7 @@ import LiveTvIcon from '@material-ui/icons/LiveTv';
 import MovieIcon from '@material-ui/icons/Movie';
 import TheatersIcon from '@material-ui/icons/Theaters';
 import './PopularGroup.scss'
-import { useGetPopular } from '../../usePopular/useGetPopular';
+import { useGetPopular } from '../../../usePopular/useGetPopular';
 function PopularGroup() {
   const [value,setValue] = React.useState(0);
   const {getMoviePopular,getTvPopular,getMoviePopularInTheater} = useGetPopular()

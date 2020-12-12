@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { addUrlParams } from '../../features/movieSlice'
-import { useGetSearch } from '../../useSearch/useGetSearch'
+import { addUrlParams } from '../../../features/movieSlice'
+import { useGetSearch } from '../../../useSearch/useGetSearch'
 import './Banner.scss'
 function Banner() {
   const [searchQuery,setSearchQuery]  = useState('')

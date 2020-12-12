@@ -2,7 +2,7 @@ import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import React, { useEffect, useRef } from 'react'
 import StarIcon from '@material-ui/icons/Star';
 import TodayIcon from '@material-ui/icons/Today';
-import { useTvToWatch } from '../../useTvToWatch/useTvToWatch';
+import { useTvToWatch } from '../../../useTvToWatch/useTvToWatch';
 import './TvToWatchGroup.scss'
 function TvToWatchGroup() {  
   const [value, setValue] = React.useState(0)

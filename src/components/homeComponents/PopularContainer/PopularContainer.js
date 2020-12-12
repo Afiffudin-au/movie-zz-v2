@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectPopularBlock } from '../../features/movieSlice'
-import { StyledLinearProgress } from '../LoadingProgress/LoadingProgress'
+import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import './PopularContainer.scss'
-import Card from '../Card/Card'
+import { selectPopularBlock } from '../../../features/movieSlice'
+import Card from '../../Card/Card'
 function PopularContainer() {
   const {populars,loading} = useSelector(selectPopularBlock)
   return (

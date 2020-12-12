@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { selectSearchResultBlock, selectUrlParamsBlock } from '../../features/movieSlice'
 import Card from '../Card/Card'
-import { StyledLinearProgress } from '../LoadingProgress/LoadingProgress'
+import { StyledLinearProgress } from '../extraComponents/LoadingProgress/LoadingProgress'
 import './SearchResult.scss'
 import Pagination from '@material-ui/lab/Pagination';
 import { useGetSearch } from '../../useSearch/useGetSearch'
@@ -19,7 +19,6 @@ function SearchResult() {
   useEffect(()=>{
     setPages(1)
   },[query])
-  console.log(multiResults)
   return (
     <div className="searchResult">
       {

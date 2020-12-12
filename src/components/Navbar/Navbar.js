@@ -15,16 +15,16 @@ function Navbar() {
               Movies
             </Link>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <Link to="/movie-popular" className="dropdown-item">
+              <Link to="/movies" className="dropdown-item">
                 Popular
               </Link>
-              <Link to="/movie-now-playing" className="dropdown-item">
+              <Link to="/movies" className="dropdown-item">
                 Now Playing
               </Link>
-              <Link to="/movie-upcoming" className="dropdown-item">
+              <Link to="/movies" className="dropdown-item">
                Upcoming
               </Link>
-              <Link to="/movie-top-rated" className="dropdown-item">
+              <Link to="/movies" className="dropdown-item">
                Top Rated
               </Link>
             </div>

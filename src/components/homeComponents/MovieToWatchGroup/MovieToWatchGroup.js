@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import StarIcon from '@material-ui/icons/Star';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import './MovieToWatchGroup.scss'
-import { useGetMovieToWatch } from '../../useMovieToWatch/useGetMovieToWatch';
+import { useGetMovieToWatch } from '../../../useMovieToWatch/useGetMovieToWatch';
 function MovieToWatchGroup() {
   const [value, setValue] = React.useState(0);
   const {getMovieTopRated,getMovieUpComing} = useGetMovieToWatch()

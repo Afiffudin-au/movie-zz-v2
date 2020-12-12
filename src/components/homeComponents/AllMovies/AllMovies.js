@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
-import { useGetAllMovie } from '../../useAllMovie/useGetAllMovie'
-import Card from '../Card/Card'
-import { StyledLinearProgress } from '../LoadingProgress/LoadingProgress'
+import { useGetAllMovie } from '../../../useAllMovie/useGetAllMovie'
+import Card from '../../Card/Card'
+import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import Pagination from '@material-ui/lab/Pagination';
 import './AllMovies.scss'
 function AllMovies() {
