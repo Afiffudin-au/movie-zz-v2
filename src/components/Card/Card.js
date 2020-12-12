@@ -15,7 +15,7 @@ function Card({id,releaseDate,originalTitle,posterPath,voteAverage}) {
           width={150}
           height={200}
           >
-          <LightTooltip enterDelay={10} title={`Movie Detail`} placement="top" arrow>
+          <LightTooltip enterDelay={10} title={originalTitle} placement="top" arrow>
             <img src={posterPath} alt={''}/>
           </LightTooltip>
         </LazyLoad>
