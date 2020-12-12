@@ -1,32 +1,33 @@
-import React, { useEffect, useRef } from 'react'
-import { useGetAllMovie } from '../../useAllMovie/useGetAllMovie'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { selectSearchResultBlock, selectUrlParamsBlock } from '../../features/movieSlice'
 import Card from '../Card/Card'
 import { StyledLinearProgress } from '../LoadingProgress/LoadingProgress'
+import './SearchResult.scss'
 import Pagination from '@material-ui/lab/Pagination';
-import './AllMovies.scss'
-function AllMovies() {
-  const {getAllMovie,loading,dataMovies} = useGetAllMovie()
-  const refGetAllMovie = useRef(getAllMovie)
-  const [pages, setPages] = React.useState(1);
-  const {total_pages} = dataMovies
+import { useGetSearch } from '../../useSearch/useGetSearch'
+function SearchResult() {
+  const {multiResults,loading} = useSelector(selectSearchResultBlock)
+  const {query} = useSelector(selectUrlParamsBlock)
+  const [pages,setPages] = React.useState(1);
+  const {total_pages} = multiResults
+  const {getSearch} = useGetSearch()
   const handleChange = (event, value) => {
     setPages(value)
-    getAllMovie(value)
+    getSearch(query,value)
   };
   useEffect(()=>{
-    refGetAllMovie.current()
-  },[])
+    setPages(1)
+  },[query])
+  console.log(multiResults)
   return (
-    <div className="allMovies">
+    <div className="searchResult">
       {
         loading && <StyledLinearProgress/>
       }
-      <div className="title">
-        <h1>All movies to watch</h1>
-      </div>
-      <div className="allMoviesGrid">
-        {
-          dataMovies?.results?.map((item,index)=>(
+      <div className="searchResultGrid">
+      {
+          multiResults?.results?.map((item,index)=>(
             <MemoizedChildComponent
             styleProps={{display : 'block',width : '100%'}} 
             id={item.id}
@@ -38,16 +39,19 @@ function AllMovies() {
           ))
         }
       </div>
-      <div className="allMoviespagenation">
-        <Pagination count={total_pages} page={pages} onChange={handleChange} color="primary"/>
-      </div>
+      {
+        loading &&  
+        <div className="searchResultPagenation">
+          <Pagination count={total_pages} page={pages} onChange={handleChange} color="primary"/>
+        </div>
+      }
     </div>
   )
 }
 function ChildComponent({styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}){
   return(
     <Card 
-    styleProps={styleProps} 
+     styleProps={styleProps} 
      id={id} 
      releaseDate={releaseDate} 
      originalTitle={originalTitle}
@@ -59,4 +63,4 @@ function compare(prevProps , nextProps){
   return JSON.stringify(prevProps) === JSON.stringify(nextProps)
 }
 const MemoizedChildComponent = React.memo(ChildComponent,compare)
-export default AllMovies
+export default SearchResult

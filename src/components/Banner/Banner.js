@@ -1,15 +1,25 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { addUrlParams } from '../../features/movieSlice'
+import { useGetSearch } from '../../useSearch/useGetSearch'
 import './Banner.scss'
 function Banner() {
   const [searchQuery,setSearchQuery]  = useState('')
-  // const history = useHistory()
+  const {getSearch} = useGetSearch()
+  const history = useHistory()
+  const dispatch = useDispatch()
   const handleSubmit = (e)=>{
     e.preventDefault()
     const userText = searchQuery.replace(/^\s+/, '').replace(/\s+$/, '');
     if(userText === ''){
       return
     }
+    getSearch(searchQuery)
+    dispatch(addUrlParams({
+      query : searchQuery
+    }))
+    history.push('/search-result')
   }
   return (
     <div className="banner">
