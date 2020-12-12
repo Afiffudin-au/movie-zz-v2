@@ -5,7 +5,7 @@ import './PopularContainer.scss'
 import { selectPopularBlock } from '../../../features/movieSlice'
 import Card from '../../Card/Card'
 function PopularContainer() {
-  const {populars,loading} = useSelector(selectPopularBlock)
+  const {populars,loading,url} = useSelector(selectPopularBlock)
   return (
     <>
       {
@@ -18,7 +18,7 @@ function PopularContainer() {
         <div className="popularContainer-items">
           {
           populars?.results?.map((item,index)=>(
-            <Card id={item.id} releaseDate={item.release_date || item.first_air_date} originalTitle={item.original_title || item.original_name} posterPath={`${process.env.REACT_APP_POSTER_URL}${item.poster_path}`} voteAverage={item.vote_average || 0} key={item.id} />
+            <Card url={url} id={item.id} releaseDate={item.release_date || item.first_air_date} originalTitle={item.original_title || item.original_name} posterPath={`${process.env.REACT_APP_POSTER_URL}${item.poster_path}`} voteAverage={item.vote_average || 0} key={item.id} />
           ))
           }
         </div>

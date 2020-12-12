@@ -5,7 +5,7 @@ import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/Load
 import Pagination from '@material-ui/lab/Pagination';
 import './AllMovies.scss'
 function AllMovies() {
-  const {getAllMovie,loading,dataMovies} = useGetAllMovie()
+  const {getAllMovie,loading,dataMovies,url} = useGetAllMovie()
   const refGetAllMovie = useRef(getAllMovie)
   const [pages, setPages] = React.useState(1);
   const {total_pages} = dataMovies
@@ -28,6 +28,7 @@ function AllMovies() {
         {
           dataMovies?.results?.map((item,index)=>(
             <MemoizedChildComponent
+            url={url}
             styleProps={{display : 'block',width : '100%'}} 
             id={item.id}
             releaseDate={item.release_date || item.first_air_date} 
@@ -44,9 +45,10 @@ function AllMovies() {
     </div>
   )
 }
-function ChildComponent({styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}){
+function ChildComponent({url,styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}){
   return(
     <Card 
+    url={url}
     styleProps={styleProps} 
      id={id} 
      releaseDate={releaseDate} 

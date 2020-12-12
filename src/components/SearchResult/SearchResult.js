@@ -7,7 +7,7 @@ import './SearchResult.scss'
 import Pagination from '@material-ui/lab/Pagination';
 import { useGetSearch } from '../../useSearch/useGetSearch'
 function SearchResult() {
-  const {multiResults,loading} = useSelector(selectSearchResultBlock)
+  const {multiResults,loading,url} = useSelector(selectSearchResultBlock)
   const {query} = useSelector(selectUrlParamsBlock)
   const [pages,setPages] = React.useState(1);
   const {total_pages} = multiResults
@@ -28,6 +28,8 @@ function SearchResult() {
       {
           multiResults?.results?.map((item,index)=>(
             <MemoizedChildComponent
+            url={url}
+            mediaType={item.media_type}
             styleProps={{display : 'block',width : '100%'}} 
             id={item.id}
             releaseDate={item.release_date || item.first_air_date} 
@@ -47,9 +49,11 @@ function SearchResult() {
     </div>
   )
 }
-function ChildComponent({styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}){
+function ChildComponent({url,mediaType,styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}){
   return(
     <Card 
+     url={url}
+     mediaType={mediaType}
      styleProps={styleProps} 
      id={id} 
      releaseDate={releaseDate} 

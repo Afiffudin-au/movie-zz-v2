@@ -6,7 +6,7 @@ import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/Load
 import Card from '../../Card/Card'
 import './MovieToWatchContainer.scss'
 function MovieToWatchContainer() {
-  const {movieToWatch,loading} = useSelector(selectMovieToWatchBlock)
+  const {movieToWatch,loading,url} = useSelector(selectMovieToWatchBlock)
   return (
     <>
     {
@@ -19,7 +19,7 @@ function MovieToWatchContainer() {
       <div className="movieToWatchContainer-items">
         {
           movieToWatch?.results?.map((item,index)=>(
-            <Card id={item.id} releaseDate={item.release_date || item.first_air_date} originalTitle={item.original_title || item.original_name} posterPath={`${process.env.REACT_APP_POSTER_URL}${item.poster_path}`} voteAverage={item.vote_average || 0} key={item.id} />
+            <Card url={url} id={item.id} releaseDate={item.release_date || item.first_air_date} originalTitle={item.original_title || item.original_name} posterPath={`${process.env.REACT_APP_POSTER_URL}${item.poster_path}`} voteAverage={item.vote_average || 0} key={item.id} />
           ))
         }
       </div>

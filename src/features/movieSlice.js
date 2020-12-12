@@ -25,6 +25,10 @@ export const movieSlice = createSlice({
     },
     urlParamsBlock : {
       query : ''
+    },
+    detailBlock : {
+      details : {},
+      loading : null
     }
    
   },
@@ -67,14 +71,23 @@ export const movieSlice = createSlice({
     },
     addUrlParams : (state,action)=>{
       state.urlParamsBlock.query = action.payload.query
+    },
+    addDetail : (state,action)=>{
+      state.detailBlock.loading  = action.payload.loading
+      if(action.payload.loading){
+        state.detailBlock.details = {}
+        return
+      }
+      state.detailBlock.details = action.payload.dataDetails
     }
   },
 });
 
-export const { addPopular ,addMovieToWatch,addTvToWatch,addSearchResult,addUrlParams} = movieSlice.actions;
+export const { addPopular ,addMovieToWatch,addTvToWatch,addSearchResult,addUrlParams,addDetail} = movieSlice.actions;
 export const selectPopularBlock= state => state.movies.popularBlock;
 export const selectMovieToWatchBlock= state => state.movies.movieToWatchBlock;
 export const selectTvToWatchBlock= state => state.movies.tvToWatchBlock;
 export const selectSearchResultBlock= state => state.movies.searchResultBlock;
 export const selectUrlParamsBlock= state => state.movies.urlParamsBlock;
+export const selectDetailBlock= state => state.movies.detailBlock;
 export default movieSlice.reducer;

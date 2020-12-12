@@ -46,6 +46,17 @@
     font-weight: 500;
     font-size: 18px;
   }
+  .watchButton{
+    color: white;
+    background-color: #2196f3;
+    padding: 10px;
+    border-radius: 5px;
+    outline: 0;
+    font-weight: 500;
+    &:hover{
+      background-color: #1e88e5;
+    }
+  }
   }
 }
 @media(min-width : 700px){

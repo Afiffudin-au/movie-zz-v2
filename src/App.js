@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Home from './components/homeComponents/Home/Home';
+import MovieDetail from './components/MovieDetail/MovieDetail';
 import Navbar from './components/Navbar/Navbar';
 import SearchResult from './components/SearchResult/SearchResult';
 function App() {
@@ -14,6 +15,9 @@ function App() {
       <div className="App">
         <Navbar/>
         <Switch>
+          <Route path="/detail">
+            <MovieDetail/>
+          </Route>
           <Route path="/search-result">
             <SearchResult/>
           </Route>

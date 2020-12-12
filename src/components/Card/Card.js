@@ -4,9 +4,14 @@ import { LightTooltip } from '../extraComponents/LightTooltip/LightTooltip'
 import StarRateIcon from '@material-ui/icons/StarRate';
 import {amber} from '@material-ui/core/colors';
 import './Card.scss'
-function Card({URL,styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}) {
+import { useGetDetail } from '../../useDetail/useGetDetail';
+import { useHistory } from 'react-router-dom';
+function Card({url,mediaType,styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}) {
+  const {getDetail} = useGetDetail()
+  const history = useHistory()
   const handleDetail = ()=>{  
-    console.log('detail')
+    getDetail(id,url,mediaType)
+    history.push('/detail')
   }
   return (
     <div className="Card" style={styleProps}>

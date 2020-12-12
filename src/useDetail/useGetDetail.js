@@ -1,6 +1,12 @@
 import Axios from "axios"
+import { useDispatch } from "react-redux"
+import { addDetail } from "../features/movieSlice"
 export function useGetDetail(){
+  const dispatch = useDispatch()
   const getDetail = (movie_id,URL,mediaType)=>{
+    dispatch(addDetail({
+      loading : true
+    }))
     const urlSplit = URL?.split('popular',1)
     .join('').split('now_playing',1)
     .join('').split('upcoming',1)
@@ -17,8 +23,14 @@ export function useGetDetail(){
       method : 'GET',
       url : url
     }).then(res=>{
-      console.log(res.data)
+      dispatch(addDetail({
+        loading : false,
+        dataDetails : res.data
+      }))
     }).catch(err=>{
+      dispatch(addDetail({
+        loading : false
+      }))
       alert(err)
     })
   }
