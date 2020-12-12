@@ -4,7 +4,7 @@ import { LightTooltip } from '../extraComponents/LightTooltip/LightTooltip'
 import StarRateIcon from '@material-ui/icons/StarRate';
 import {amber} from '@material-ui/core/colors';
 import './Card.scss'
-function Card({styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}) {
+function Card({URL,styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}) {
   const handleDetail = ()=>{  
     console.log('detail')
   }

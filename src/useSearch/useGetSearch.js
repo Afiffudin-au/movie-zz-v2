@@ -17,13 +17,14 @@ export function useGetSearch(){
         alert(`Sorry we cannot find ${query}`)
         dispatch(addSearchResult({
           loading : false,
-          dataMultiSearch : []
+          dataMultiSearch : [],
         }))
         return
       }
       dispatch(addSearchResult({
         loading : false,
         dataMultiSearch : res.data,
+        url : res.config.url
       }))
     }).catch(err=>{
       dispatch(addSearchResult({
