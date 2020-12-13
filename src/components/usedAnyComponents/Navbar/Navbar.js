@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.scss'
 import NavbarSearch from './NavbarSearch/NavbarSearch'
+import { useGetMovies } from '../../../useMovies/useGetMovies'
 function Navbar() {
+  const {getMoviePopular,getMovieNowPlaying,getMovieUpcoming,getMovieTopRated} = useGetMovies()
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light">
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,16 +17,16 @@ function Navbar() {
               Movies
             </Link>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <Link to="/movies-page" className="dropdown-item">
+              <Link onClick={()=>getMoviePopular()} to="/movies-page" className="dropdown-item">
                 Popular
               </Link>
-              <Link to="/movies-page" className="dropdown-item">
+              <Link onClick={()=>getMovieNowPlaying()} to="/movies-page" className="dropdown-item">
                 Now Playing
               </Link>
-              <Link to="/movies-page" className="dropdown-item">
+              <Link onClick={()=>getMovieUpcoming()} to="/movies-page" className="dropdown-item">
                Upcoming
               </Link>
-              <Link to="/movies-page" className="dropdown-item">
+              <Link onClick={()=>getMovieTopRated()} to="/movies-page" className="dropdown-item">
                Top Rated
               </Link>
             </div>

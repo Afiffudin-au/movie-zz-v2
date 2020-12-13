@@ -4,18 +4,19 @@ import { addMovie } from "../features/movieSlice"
 
 export function useGetMovies() {
   const dispatch = useDispatch()
-  const getMoviePopular = () => {
+  const getMoviePopular = (showMore) => {
     dispatch(addMovie({
       loading: true
     }))
     Axios({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/popular?api_key=f59a67c847f06eb38cff7065821c1fd9',
-      params: { page: 1 }
+      params: { page: showMore }
     }).then(res => {
       dispatch(addMovie({
         loading: false,
-        dataMovies: res.data
+        dataMovies: res.data,
+        url : res.config.url
       }))
     }).catch(err => {
       dispatch(addMovie({
@@ -24,18 +25,19 @@ export function useGetMovies() {
       alert(err)
     })
   }
-  const getMovieNowPlaying = () => {
+  const getMovieNowPlaying = (showMore) => {
     dispatch(addMovie({
       loading: true
     }))
     Axios({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=f59a67c847f06eb38cff7065821c1fd9',
-      params: { page: 1 }
+      params: { page: showMore }
     }).then(res => {
       dispatch(addMovie({
         loading: false,
-        dataMovies: res.data
+        dataMovies: res.data,
+        url : res.config.url
       }))
     }).catch(err => {
       dispatch(addMovie({
@@ -44,18 +46,19 @@ export function useGetMovies() {
       alert(err)
     })
   }
-  const getMovieUpcoming = () => {
+  const getMovieUpcoming = (showMore) => {
     dispatch(addMovie({
       loading: true
     }))
     Axios({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=f59a67c847f06eb38cff7065821c1fd9',
-      params: { page: 1 }
+      params: { page: showMore }
     }).then(res => {
       dispatch(addMovie({
         loading: false,
-        dataMovies: res.data
+        dataMovies: res.data,
+        url : res.config.url
       }))
     }).catch(err => {
       dispatch(addMovie({
@@ -64,18 +67,19 @@ export function useGetMovies() {
       alert(err)
     })
   }
-  const getMovieTopRated = () => {
+  const getMovieTopRated = (showMore) => {
     dispatch(addMovie({
       loading: true
     }))
     Axios({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/top_rated?api_key=f59a67c847f06eb38cff7065821c1fd9',
-      params: { page: 1 }
+      params: { page: showMore }
     }).then(res => {
       dispatch(addMovie({
         loading: false,
-        dataMovies: res.data
+        dataMovies: res.data,
+        url : res.config.url
       }))
     }).catch(err => {
       dispatch(addMovie({

@@ -9,14 +9,15 @@ import Home from './components/homeComponents/Home/Home';
 import MovieDetail from './components/secondPagesComponents/MovieDetail/MovieDetail';
 import SearchResult from './components/secondPagesComponents/SearchResult/SearchResult';
 import Navbar from './components/usedAnyComponents/Navbar/Navbar';
+import Movie from './components/secondPagesComponents/Movie/Movie';
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar/>
         <Switch>
-          <Route path="/movies-catagory">
-
+          <Route path="/movies-page">
+            <Movie/>
           </Route>
           <Route path="/detail">
             <MovieDetail/>

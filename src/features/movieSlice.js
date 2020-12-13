@@ -32,7 +32,8 @@ export const movieSlice = createSlice({
     },
     movieBlocks : {
       movies : [],
-      loading  : null
+      loading  : null,
+      url : ''
     }
    
   },
@@ -86,6 +87,7 @@ export const movieSlice = createSlice({
     },
     addMovie : (state,action)=>{
       state.movieBlocks.loading  = action.payload.loading
+      state.movieBlocks.url  = action.payload.url
       if(action.payload.loading){
         state.movieBlocks.movies = []
         return
@@ -101,6 +103,6 @@ export const selectMovieToWatchBlocks= state => state.movies.movieToWatchBlocks;
 export const selectTvToWatchBlocks= state => state.movies.tvToWatchBlocks;
 export const selectSearchResultBlocks= state => state.movies.searchResultBlocks;
 export const selectUrlParamsBlock= state => state.movies.urlParamsBlock;
-export const selectDetailBlocks= state => state.movies.detailBlocks;
-export const selectMoviesBlocks= state => state.movies.moviesBlocks;
+export const selectDetailBlocks = state => state.movies.detailBlocks;
+export const selectMoviesBlocks = state => state.movies.movieBlocks;
 export default movieSlice.reducer;
