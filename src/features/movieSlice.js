@@ -3,22 +3,22 @@ import { createSlice } from '@reduxjs/toolkit';
 export const movieSlice = createSlice({
   name: 'movie',
   initialState: {
-    popularBlock : {
+    popularBlocks : {
       populars : [],
       loading : null,
       url : ''
     },
-    movieToWatchBlock : {
+    movieToWatchBlocks : {
       movieToWatch : [],
       loading : null,
       url : ''
     },
-    tvToWatchBlock : {
+    tvToWatchBlocks : {
       tvToWatch : [],
       loading : null,
       url : ''
     },
-    searchResultBlock : {
+    searchResultBlocks : {
       multiResults : [],
       loading  : null,
       url : ''
@@ -26,68 +26,81 @@ export const movieSlice = createSlice({
     urlParamsBlock : {
       query : ''
     },
-    detailBlock : {
+    detailBlocks : {
       details : {},
       loading : null
+    },
+    movieBlocks : {
+      movies : [],
+      loading  : null
     }
    
   },
   reducers: {
     addPopular: (state, action) => {
-      state.popularBlock.loading = action.payload.loading
-      state.popularBlock.url = action.payload.url
+      state.popularBlocks.loading = action.payload.loading
+      state.popularBlocks.url = action.payload.url
       if(action.payload.loading){
-        state.popularBlock.populars = []
+        state.popularBlocks.populars = []
         return
       }
-      state.popularBlock.populars = action.payload.dataPopulars;
+      state.popularBlocks.populars = action.payload.dataPopulars;
     },
     addMovieToWatch : (state,action)=>{
-      state.movieToWatchBlock.loading = action.payload.loading
-      state.movieToWatchBlock.url = action.payload.url
+      state.movieToWatchBlocks.loading = action.payload.loading
+      state.movieToWatchBlocks.url = action.payload.url
       if(action.payload.loading){
-        state.movieToWatchBlock.movieToWatch = []
+        state.movieToWatchBlocks.movieToWatch = []
         return
       }
-      state.movieToWatchBlock.movieToWatch = action.payload.dataMovieToWatch;
+      state.movieToWatchBlocks.movieToWatch = action.payload.dataMovieToWatch;
     },
     addTvToWatch : (state,action)=>{
-      state.tvToWatchBlock.loading = action.payload.loading
-      state.tvToWatchBlock.url = action.payload.url
+      state.tvToWatchBlocks.loading = action.payload.loading
+      state.tvToWatchBlocks.url = action.payload.url
       if(action.payload.loading){
-        state.tvToWatchBlock.tvToWatch = []
+        state.tvToWatchBlocks.tvToWatch = []
         return
       }
-      state.tvToWatchBlock.tvToWatch = action.payload.datatvToWatch;
+      state.tvToWatchBlocks.tvToWatch = action.payload.datatvToWatch;
     },
     addSearchResult : (state,action)=>{
-      state.searchResultBlock.loading  = action.payload.loading
-      state.searchResultBlock.url  = action.payload.url
+      state.searchResultBlocks.loading  = action.payload.loading
+      state.searchResultBlocks.url  = action.payload.url
       if(action.payload.loading){
-        state.searchResultBlock.multiResults = []
+        state.searchResultBlocks.multiResults = []
         return
       }
-      state.searchResultBlock.multiResults = action.payload.dataMultiSearch
+      state.searchResultBlocks.multiResults = action.payload.dataMultiSearch
     },
     addUrlParams : (state,action)=>{
       state.urlParamsBlock.query = action.payload.query
     },
     addDetail : (state,action)=>{
-      state.detailBlock.loading  = action.payload.loading
+      state.detailBlocks.loading  = action.payload.loading
       if(action.payload.loading){
-        state.detailBlock.details = {}
+        state.detailBlocks.details = {}
         return
       }
-      state.detailBlock.details = action.payload.dataDetails
+      state.detailBlocks.details = action.payload.dataDetails
+    },
+    addMovie : (state,action)=>{
+      state.movieBlocks.loading  = action.payload.loading
+      if(action.payload.loading){
+        state.movieBlocks.movies = []
+        return
+      }
+      state.movieBlocks.movies = action.payload.dataMovies
     }
   },
 });
 
-export const { addPopular ,addMovieToWatch,addTvToWatch,addSearchResult,addUrlParams,addDetail} = movieSlice.actions;
-export const selectPopularBlock= state => state.movies.popularBlock;
-export const selectMovieToWatchBlock= state => state.movies.movieToWatchBlock;
-export const selectTvToWatchBlock= state => state.movies.tvToWatchBlock;
-export const selectSearchResultBlock= state => state.movies.searchResultBlock;
+export const { addPopular ,addMovieToWatch,addTvToWatch,addSearchResult,addUrlParams,addDetail,addMovie} = movieSlice.actions;
+export const selectPopularBlocks = state => state.movies.popularBlocks;
+export const selectMovieToWatchBlocks= state => state.movies.movieToWatchBlocks;
+export const selectTvToWatchBlocks= state => state.movies.tvToWatchBlocks;
+export const selectSearchResultBlocks= state => state.movies.searchResultBlocks;
 export const selectUrlParamsBlock= state => state.movies.urlParamsBlock;
-export const selectDetailBlock= state => state.movies.detailBlock;
+export const selectDetailBlocks= state => state.movies.detailBlocks;
+export const selectMoviesBlocks= state => state.movies.moviesBlocks;
 export default movieSlice.reducer;

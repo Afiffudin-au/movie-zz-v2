@@ -1,10 +1,10 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 import { useSelector } from 'react-redux'
-import { selectDetailBlock } from '../../../features/movieSlice'
+import { selectDetailBlocks } from '../../../features/movieSlice'
 import './MovieDetail.scss'
 function MovieDetail() {
-  const {details} = useSelector(selectDetailBlock)
+  const {details} = useSelector(selectDetailBlocks)
   console.log(details)
   return (
      <div className="movieDetail" style={{backgroundImage : `url(${process.env.REACT_APP_POSTER_URL}${details.backdrop_path})`}} >

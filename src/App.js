@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <Navbar/>
         <Switch>
-          <Route path="/movies-page">
+          <Route path="/movies-catagory">
 
           </Route>
           <Route path="/detail">

@@ -13,7 +13,7 @@ function Home() {
     <>
      <Banner/> 
 
-     <PopularGroup/>
+     {/* <PopularGroup/>
      <PopularContainer/>
 
      <MovieToWatchGroup/>
@@ -22,7 +22,7 @@ function Home() {
      <TvToWatchGroup/>
      <TvToWatchContainer/>
 
-     <AllMovies/> 
+     <AllMovies/>  */}
     </>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectTvToWatchBlock } from '../../../features/movieSlice'
+import { selectTvToWatchBlocks } from '../../../features/movieSlice'
 import Card from '../../usedAnyComponents/Card/Card';
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import './TvToWatchContainer.scss'
 function TvToWatchContainer() {
-  const {tvToWatch,loading,url} = useSelector(selectTvToWatchBlock)
+  const {tvToWatch,loading,url} = useSelector(selectTvToWatchBlocks)
   return (
     <>
     {

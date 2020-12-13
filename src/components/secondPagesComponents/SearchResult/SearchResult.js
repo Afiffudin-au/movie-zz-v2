@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { selectSearchResultBlock, selectUrlParamsBlock } from '../../../features/movieSlice'
+import { selectSearchResultBlocks, selectUrlParamsBlock } from '../../../features/movieSlice'
 import Card from '../../usedAnyComponents/Card/Card';
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import './SearchResult.scss'
 import Pagination from '@material-ui/lab/Pagination';
 import { useGetSearch } from '../../../useSearch/useGetSearch'
 function SearchResult() {
-  const {multiResults,loading,url} = useSelector(selectSearchResultBlock)
+  const {multiResults,loading,url} = useSelector(selectSearchResultBlocks)
   const {query} = useSelector(selectUrlParamsBlock)
   const [pages,setPages] = React.useState(1);
   const {total_pages} = multiResults
