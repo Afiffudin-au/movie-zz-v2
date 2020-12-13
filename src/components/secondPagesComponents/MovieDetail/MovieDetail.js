@@ -3,11 +3,14 @@ import LazyLoad from 'react-lazyload'
 import { useSelector } from 'react-redux'
 import { selectDetailBlocks } from '../../../features/movieSlice'
 import './MovieDetail.scss'
+import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 function MovieDetail() {
-  const {details} = useSelector(selectDetailBlocks)
-  console.log(details)
+  const {details,loading} = useSelector(selectDetailBlocks)
   return (
      <div className="movieDetail" style={{backgroundImage : `url(${process.env.REACT_APP_POSTER_URL}${details.backdrop_path})`}} >
+      {
+        loading && <StyledLinearProgress/>
+      }
      <div className="movieDetail__customBg">
       <div className="movieDetail__content">
         <div className="movieDetail__img">

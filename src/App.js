@@ -10,12 +10,16 @@ import MovieDetail from './components/secondPagesComponents/MovieDetail/MovieDet
 import SearchResult from './components/secondPagesComponents/SearchResult/SearchResult';
 import Navbar from './components/usedAnyComponents/Navbar/Navbar';
 import Movie from './components/secondPagesComponents/Movie/Movie';
+import TvShow from './components/secondPagesComponents/TvShow/TvShow'
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar/>
         <Switch>
+          <Route path="/tv-page">
+            <TvShow/>
+          </Route>
           <Route path="/movies-page">
             <Movie/>
           </Route>

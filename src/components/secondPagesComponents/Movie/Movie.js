@@ -23,7 +23,6 @@ function Movie() {
       getMovieTopRated(value)
     }
   };
-  console.log(movies)
   return (
     <div className="Movie">
      {

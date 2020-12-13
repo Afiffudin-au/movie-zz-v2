@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import './Navbar.scss'
 import NavbarSearch from './NavbarSearch/NavbarSearch'
 import { useGetMovies } from '../../../useMovies/useGetMovies'
+import { useGetTvShow } from '../../../useTvShows/useGetTvShows'
 function Navbar() {
   const {getMoviePopular,getMovieNowPlaying,getMovieUpcoming,getMovieTopRated} = useGetMovies()
+  const {getTvPopular,getTvAiringToday,getTvLatest,getTvTopRated} = useGetTvShow()
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light">
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,16 +38,16 @@ function Navbar() {
               Tv Shows
             </Link>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <Link to="/tv-popular" className="dropdown-item">
+              <Link onClick={()=>getTvPopular()} to="/tv-page" className="dropdown-item">
                 Popular
               </Link>
-              <Link to="/tv-airing-today" className="dropdown-item">
+              <Link onClick={()=>getTvAiringToday()} to="/tv-page" className="dropdown-item">
                 Airing Today
               </Link>
-              <Link to="/tv-on-tv" className="dropdown-item">
-                On Tv
+              <Link onClick={()=>getTvLatest()} to="/tv-page" className="dropdown-item">
+                Latest
               </Link>
-              <Link to="/tv-top-rated" className="dropdown-item">
+              <Link onClick={()=>getTvTopRated()} to="/tv-page" className="dropdown-item">
                 Top Rated
               </Link>
             </div>
