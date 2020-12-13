@@ -6,15 +6,18 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Home from './components/homeComponents/Home/Home';
-import MovieDetail from './components/MovieDetail/MovieDetail';
-import Navbar from './components/Navbar/Navbar';
-import SearchResult from './components/SearchResult/SearchResult';
+import MovieDetail from './components/secondPagesComponents/MovieDetail/MovieDetail';
+import SearchResult from './components/secondPagesComponents/SearchResult/SearchResult';
+import Navbar from './components/usedAnyComponents/Navbar/Navbar';
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar/>
         <Switch>
+          <Route path="/movies-page">
+
+          </Route>
           <Route path="/detail">
             <MovieDetail/>
           </Route>

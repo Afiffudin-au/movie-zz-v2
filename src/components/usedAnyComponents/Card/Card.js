@@ -1,11 +1,11 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
-import { LightTooltip } from '../extraComponents/LightTooltip/LightTooltip'
 import StarRateIcon from '@material-ui/icons/StarRate';
 import {amber} from '@material-ui/core/colors';
 import './Card.scss'
-import { useGetDetail } from '../../useDetail/useGetDetail';
 import { useHistory } from 'react-router-dom';
+import { useGetDetail } from '../../../useDetail/useGetDetail';
+import { LightTooltip } from '../../extraComponents/LightTooltip/LightTooltip';
 function Card({url,mediaType,styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}) {
   const {getDetail} = useGetDetail()
   const history = useHistory()

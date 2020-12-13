@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectTvToWatchBlock } from '../../../features/movieSlice'
-import Card from '../../Card/Card'
+import Card from '../../usedAnyComponents/Card/Card';
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import './TvToWatchContainer.scss'
 function TvToWatchContainer() {

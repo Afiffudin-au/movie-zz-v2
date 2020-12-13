@@ -3,7 +3,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectMovieToWatchBlock } from '../../../features/movieSlice'
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
-import Card from '../../Card/Card'
+import Card from '../../usedAnyComponents/Card/Card';
 import './MovieToWatchContainer.scss'
 function MovieToWatchContainer() {
   const {movieToWatch,loading,url} = useSelector(selectMovieToWatchBlock)

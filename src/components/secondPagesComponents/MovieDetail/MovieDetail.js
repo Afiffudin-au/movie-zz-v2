@@ -1,7 +1,7 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 import { useSelector } from 'react-redux'
-import { selectDetailBlock } from '../../features/movieSlice'
+import { selectDetailBlock } from '../../../features/movieSlice'
 import './MovieDetail.scss'
 function MovieDetail() {
   const {details} = useSelector(selectDetailBlock)

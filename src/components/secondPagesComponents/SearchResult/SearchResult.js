@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { selectSearchResultBlock, selectUrlParamsBlock } from '../../features/movieSlice'
-import Card from '../Card/Card'
-import { StyledLinearProgress } from '../extraComponents/LoadingProgress/LoadingProgress'
+import { selectSearchResultBlock, selectUrlParamsBlock } from '../../../features/movieSlice'
+import Card from '../../usedAnyComponents/Card/Card';
+import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import './SearchResult.scss'
 import Pagination from '@material-ui/lab/Pagination';
-import { useGetSearch } from '../../useSearch/useGetSearch'
+import { useGetSearch } from '../../../useSearch/useGetSearch'
 function SearchResult() {
   const {multiResults,loading,url} = useSelector(selectSearchResultBlock)
   const {query} = useSelector(selectUrlParamsBlock)
@@ -19,6 +19,7 @@ function SearchResult() {
   useEffect(()=>{
     setPages(1)
   },[query])
+  console.log(total_pages)
   return (
     <div className="searchResult">
       {
@@ -41,7 +42,7 @@ function SearchResult() {
         }
       </div>
       {
-        loading &&  
+        !loading &&  
         <div className="searchResultPagenation">
           <Pagination count={total_pages} page={pages} onChange={handleChange} color="primary"/>
         </div>

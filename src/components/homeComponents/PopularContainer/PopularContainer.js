@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import './PopularContainer.scss'
 import { selectPopularBlock } from '../../../features/movieSlice'
-import Card from '../../Card/Card'
+import Card from '../../usedAnyComponents/Card/Card';
 function PopularContainer() {
   const {populars,loading,url} = useSelector(selectPopularBlock)
   return (
