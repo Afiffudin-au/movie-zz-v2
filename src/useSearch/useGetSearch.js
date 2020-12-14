@@ -28,7 +28,7 @@ export function useGetSearch(){
       }))
     }).catch(err=>{
       dispatch(addSearchResult({
-        loading : false
+        loading : false,
       }))
       alert(err)
     })

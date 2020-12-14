@@ -46,67 +46,39 @@ export const movieSlice = createSlice({
     addPopular: (state, action) => {
       state.popularBlocks.loading = action.payload.loading
       state.popularBlocks.url = action.payload.url
-      if(action.payload.loading){
-        state.popularBlocks.populars = []
-        return
-      }
-      state.popularBlocks.populars = action.payload.dataPopulars;
+      state.popularBlocks.populars = action.payload.dataPopulars || [];
     },
     addMovieToWatch : (state,action)=>{
       state.movieToWatchBlocks.loading = action.payload.loading
       state.movieToWatchBlocks.url = action.payload.url
-      if(action.payload.loading){
-        state.movieToWatchBlocks.movieToWatch = []
-        return
-      }
-      state.movieToWatchBlocks.movieToWatch = action.payload.dataMovieToWatch;
+      state.movieToWatchBlocks.movieToWatch = action.payload.dataMovieToWatch || [];
     },
     addTvToWatch : (state,action)=>{
       state.tvToWatchBlocks.loading = action.payload.loading
       state.tvToWatchBlocks.url = action.payload.url
-      if(action.payload.loading){
-        state.tvToWatchBlocks.tvToWatch = []
-        return
-      }
-      state.tvToWatchBlocks.tvToWatch = action.payload.datatvToWatch;
+      state.tvToWatchBlocks.tvToWatch = action.payload.datatvToWatch || [];
     },
-    addSearchResult : (state,action)=>{
+    addSearchResult : (state,action)=>{      
       state.searchResultBlocks.loading  = action.payload.loading
       state.searchResultBlocks.url  = action.payload.url
-      if(action.payload.loading){
-        state.searchResultBlocks.multiResults = []
-        return
-      }
-      state.searchResultBlocks.multiResults = action.payload.dataMultiSearch
+      state.searchResultBlocks.multiResults = action.payload.dataMultiSearch || []
     },
     addUrlParams : (state,action)=>{
       state.urlParamsBlock.query = action.payload.query
     },
     addDetail : (state,action)=>{
       state.detailBlocks.loading  = action.payload.loading
-      if(action.payload.loading){
-        state.detailBlocks.details = {}
-        return
-      }
-      state.detailBlocks.details = action.payload.dataDetails
+      state.detailBlocks.details = action.payload.dataDetails || {}
     },
     addMovie : (state,action)=>{
       state.movieBlocks.loading  = action.payload.loading
       state.movieBlocks.url  = action.payload.url
-      if(action.payload.loading){
-        state.movieBlocks.movies = []
-        return
-      }
-      state.movieBlocks.movies = action.payload.dataMovies
+      state.movieBlocks.movies = action.payload.dataMovies || []
     },
     addTvShow : (state,action)=>{
       state.tvShowBlocks.loading = action.payload.loading
       state.tvShowBlocks.url = action.payload.url
-      if(action.payload.loading){
-        state.tvShowBlocks.tvShows = []
-        return
-      }
-      state.tvShowBlocks.tvShows = action.payload.dataTvShows
+      state.tvShowBlocks.tvShows = action.payload.dataTvShows || []
     }
   },
 });

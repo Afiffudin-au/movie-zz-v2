@@ -19,6 +19,7 @@ function SearchResult() {
   useEffect(()=>{
     setPages(1)
   },[query])
+  console.log('re render')
   return (
     <div className="searchResult">
       {
