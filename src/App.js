@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import './App.css';
+import './App.scss';
 import Home from './components/homeComponents/Home/Home';
 import MovieDetail from './components/secondPagesComponents/MovieDetail/MovieDetail';
 import SearchResult from './components/secondPagesComponents/SearchResult/SearchResult';
