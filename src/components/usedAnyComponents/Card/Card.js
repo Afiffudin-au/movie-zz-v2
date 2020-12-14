@@ -13,6 +13,7 @@ function Card({url,mediaType,styleProps,id,releaseDate,originalTitle,posterPath,
     getDetail(id,url,mediaType)
     history.push('/detail')
   }
+  console.log('re-render')
   return (
     <div className="Card" style={styleProps}>
       <div onClick={handleDetail} className="Card-content" >

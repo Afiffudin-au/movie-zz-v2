@@ -19,7 +19,6 @@ function SearchResult() {
   useEffect(()=>{
     setPages(1)
   },[query])
-  console.log(total_pages)
   return (
     <div className="searchResult">
       {
@@ -28,7 +27,7 @@ function SearchResult() {
       <div className="searchResultGrid">
       {
           multiResults?.results?.map((item,index)=>(
-            <MemoizedChildComponent
+            <Card
             url={url}
             mediaType={item.media_type}
             styleProps={{display : 'block',width : '100%'}} 
@@ -50,21 +49,4 @@ function SearchResult() {
     </div>
   )
 }
-function ChildComponent({url,mediaType,styleProps,id,releaseDate,originalTitle,posterPath,voteAverage}){
-  return(
-    <Card 
-     url={url}
-     mediaType={mediaType}
-     styleProps={styleProps} 
-     id={id} 
-     releaseDate={releaseDate} 
-     originalTitle={originalTitle}
-     posterPath={posterPath} 
-     voteAverage={voteAverage} />
-  )
-}
-function compare(prevProps , nextProps){
-  return JSON.stringify(prevProps) === JSON.stringify(nextProps)
-}
-const MemoizedChildComponent = React.memo(ChildComponent,compare)
 export default SearchResult
