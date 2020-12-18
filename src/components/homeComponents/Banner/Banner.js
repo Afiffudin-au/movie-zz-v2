@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { addUrlParams } from '../../../features/movieSlice'
+import { addSearchResult, addUrlParams } from '../../../features/movieSlice'
 import { useGetSearch } from '../../../useSearch/useGetSearch'
 import './Banner.scss'
 function Banner() {
@@ -15,6 +15,9 @@ function Banner() {
     if(userText === ''){
       return
     }
+    dispatch(addSearchResult({
+      removeCopyArray : true
+    }))
     getSearch(searchQuery)
     dispatch(addUrlParams({
       query : searchQuery

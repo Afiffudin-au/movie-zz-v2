@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { addUrlParams } from '../../../../features/movieSlice'
+import { addSearchResult, addUrlParams } from '../../../../features/movieSlice'
 import { useGetSearch } from '../../../../useSearch/useGetSearch'
 import './NavbarSearch.scss'
 function NavbarSearch() {
@@ -15,6 +15,9 @@ function NavbarSearch() {
     if(userText === ''){
       return
     }
+    dispatch(addSearchResult({
+      removeCopyArray : true
+    }))
     getSearch(query)
     dispatch(addUrlParams({
       query : query

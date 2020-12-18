@@ -7,24 +7,25 @@
 }
 .searchResult{
   padding: 10px;
+  .loading{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
   .searchResultGrid{
+    margin-top: 5px;
     grid-column-gap: 5px;
     display: grid;
   }
   .searchResultPagenation{
     margin: 10px auto;
-    nav{
-      *{
-        outline: 0;
-      }
-      ul{
-        justify-content: center;
-        li{
-          button.Mui-selected{
-            background-color: #ff0e94;
-          }
-        }
-      }
+    text-align: center;
+    button{
+      color: white;
+      padding: 8px;
+      width: 90%;
+      background-color: #039be5;
+      border-radius: 5px;  
     }
   }
 }

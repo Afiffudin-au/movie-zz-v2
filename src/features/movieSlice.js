@@ -21,7 +21,8 @@ export const movieSlice = createSlice({
     searchResultBlocks : {
       multiResults : [],
       loading  : null,
-      url : ''
+      url : '',
+      totalPages : 0
     },
     urlParamsBlock : {
       query : ''
@@ -61,7 +62,15 @@ export const movieSlice = createSlice({
     addSearchResult : (state,action)=>{      
       state.searchResultBlocks.loading  = action.payload.loading
       state.searchResultBlocks.url  = action.payload.url
-      state.searchResultBlocks.multiResults = action.payload.dataMultiSearch || []
+      state.searchResultBlocks.totalPages = action.payload.dataMultiSearch?.total_pages || 0
+      if(action.payload.removeCopyArray){
+        state.searchResultBlocks.multiResults.length = 0
+      }
+      if(!action.payload.loading){
+        state.searchResultBlocks.multiResults = [
+          ...state.searchResultBlocks.multiResults,
+          action.payload.dataMultiSearch?.results || []]    
+      }
     },
     addUrlParams : (state,action)=>{
       state.urlParamsBlock.query = action.payload.query
