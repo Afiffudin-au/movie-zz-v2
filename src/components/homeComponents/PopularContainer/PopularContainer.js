@@ -4,6 +4,7 @@ import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/Load
 import './PopularContainer.scss'
 import { selectPopularBlocks } from '../../../features/movieSlice'
 import Card from '../../usedAnyComponents/Card/Card';
+import HorizontalContainer from '../HorizontalContainer/HorizontalContainer'
 function PopularContainer() {
   const {populars,loading,url} = useSelector(selectPopularBlocks)
   return (
@@ -14,15 +15,13 @@ function PopularContainer() {
           <StyledLinearProgress/>
         </div>
       }
-      <div className="popularContainer">
-        <div className="popularContainer-items">
-          {
+      <HorizontalContainer data={populars}>
+        {
           populars?.results?.map((item,index)=>(
             <Card url={url} id={item.id} releaseDate={item.release_date || item.first_air_date} originalTitle={item.original_title || item.original_name} posterPath={`${process.env.REACT_APP_POSTER_URL}${item.poster_path}`} voteAverage={item.vote_average || 0} key={item.id} />
           ))
-          }
-        </div>
-      </div>
+        }
+      </HorizontalContainer>
     </>
   )
 }
