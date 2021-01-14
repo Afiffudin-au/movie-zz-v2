@@ -5,6 +5,7 @@ import MovieIcon from '@material-ui/icons/Movie';
 import TheatersIcon from '@material-ui/icons/Theaters';
 import './PopularGroup.scss'
 import { useGetPopular } from '../../../usePopular/useGetPopular';
+import PopularContainer from '../PopularContainer/PopularContainer';
 function PopularGroup() {
   const [value,setValue] = React.useState(0);
   const {getMoviePopular,getTvPopular,getMoviePopularInTheater} = useGetPopular()
@@ -29,6 +30,7 @@ function PopularGroup() {
           <BottomNavigationAction onClick={getMoviePopularInTheater}label="In Theaters" icon={<TheatersIcon />} />
         </BottomNavigation>
       </div>
+      <PopularContainer/>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import StarIcon from '@material-ui/icons/Star';
 import TodayIcon from '@material-ui/icons/Today';
 import { useTvToWatch } from '../../../useTvToWatch/useTvToWatch';
 import './TvToWatchGroup.scss'
+import TvToWatchContainer from '../TvToWatchContainer/TvToWatchContainer';
 function TvToWatchGroup() {  
   const [value, setValue] = React.useState(0)
   const {getTvTopRated,getTvAiringToday} = useTvToWatch()
@@ -27,6 +28,7 @@ function TvToWatchGroup() {
           <BottomNavigationAction onClick={getTvAiringToday} label="Airing Today" icon={<TodayIcon/>} />
         </BottomNavigation>
       </div>
+      <TvToWatchContainer/>
     </div>
   )
 }

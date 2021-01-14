@@ -4,6 +4,7 @@ import StarIcon from '@material-ui/icons/Star';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import './MovieToWatchGroup.scss'
 import { useGetMovieToWatch } from '../../../useMovieToWatch/useGetMovieToWatch';
+import MovieToWatchContainer from '../MovieToWatchContainer/MovieToWatchContainer';
 function MovieToWatchGroup() {
   const [value, setValue] = React.useState(0);
   const {getMovieTopRated,getMovieUpComing} = useGetMovieToWatch()
@@ -27,6 +28,7 @@ function MovieToWatchGroup() {
           <BottomNavigationAction onClick={getMovieUpComing} label="Upcoming" icon={<AccessTimeIcon/>} />
         </BottomNavigation>
       </div>
+      <MovieToWatchContainer/>
     </div>
   )
 }
