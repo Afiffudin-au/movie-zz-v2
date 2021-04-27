@@ -1,8 +1,8 @@
-.horizontalContainer{
+.horizontalContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  .horizontalContainer-items{
+  .horizontalContainer-items {
     padding-left: 10px;
     padding-top: 30px;
     width: 100%;
@@ -16,18 +16,18 @@
     position: relative;
   }
 }
-@media(min-width:577px){
-  .horizontalContainer{
+@media (min-width: 577px) {
+  .horizontalContainer {
     min-height: 400px;
-    .horizontalContainer-items{
+    .horizontalContainer-items {
       height: 350px;
     }
   }
 }
-@media(min-width:321px) and (max-width : 576px){
-  .horizontalContainer{
+@media (min-width: 321px) and (max-width: 576px) {
+  .horizontalContainer {
     height: 280px;
-    .horizontalContainer-items{
+    .horizontalContainer-items {
       height: 280px;
     }
   }

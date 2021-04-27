@@ -5,35 +5,47 @@ import { addSearchResult, addUrlParams } from '../../../features/movieSlice'
 import { useGetSearch } from '../../../useSearch/useGetSearch'
 import './Banner.scss'
 function Banner() {
-  const [searchQuery,setSearchQuery]  = useState('')
-  const {getSearch} = useGetSearch()
+  const [searchQuery, setSearchQuery] = useState('')
+  const { getSearch } = useGetSearch()
   const history = useHistory()
   const dispatch = useDispatch()
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault()
-    const userText = searchQuery.replace(/^\s+/, '').replace(/\s+$/, '');
-    if(userText === ''){
+    const userText = searchQuery.replace(/^\s+/, '').replace(/\s+$/, '')
+    if (userText === '') {
       return
     }
-    dispatch(addSearchResult({
-      removeCopyArray : true
-    }))
+    dispatch(
+      addSearchResult({
+        removeCopyArray: true,
+      })
+    )
     getSearch(searchQuery)
-    dispatch(addUrlParams({
-      query : searchQuery
-    }))
+    dispatch(
+      addUrlParams({
+        query: searchQuery,
+      })
+    )
     history.push('/search-result')
   }
   return (
-    <div className="banner">
-      <div className="jumbotron jumbotron-fluid">
-        <div className="banner_wrapper">
-          <h1 className="welcome">Welcome.</h1>
-          <p className="desc">Millions of movies, TV shows and people to discover. Explore now.</p>
+    <div className='banner'>
+      <div className='jumbotron jumbotron-fluid'>
+        <div className='banner_wrapper'>
+          <h1 className='welcome'>Welcome.</h1>
+          <p className='desc'>
+            Millions of movies, TV shows and people to discover. Explore now.
+          </p>
         </div>
-        <div className="banner_search">
-          <form className="banner_form" onSubmit={handleSubmit}>
-            <input aria-label="input search" value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} type="text" placeholder="Search for movies,Tv Shows and person"/>
+        <div className='banner_search'>
+          <form className='banner_form' onSubmit={handleSubmit}>
+            <input
+              aria-label='input search'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              type='text'
+              placeholder='Search for movies,Tv Shows and person'
+            />
             <button onClick={handleSubmit}>Search</button>
           </form>
         </div>

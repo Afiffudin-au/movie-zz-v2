@@ -1,24 +1,24 @@
-.navbar{
+.navbar {
   font-family: sans-serif;
   position: sticky;
   top: 0;
   padding: 10px;
-  z-index: 2; 
+  z-index: 2;
   background-color: #01579b !important;
-  .navbar-nav{
-    .nav-item{
+  .navbar-nav {
+    .nav-item {
       margin-right: 10px;
-      .nav-link{
+      .nav-link {
         font-size: 16px;
         color: white;
       }
-      .dropdown-menu{
+      .dropdown-menu {
         background-color: #448aff;
-        .dropdown-item{
+        .dropdown-item {
           text-transform: capitalize;
           color: white;
         }
-        .dropdown-item:hover{
+        .dropdown-item:hover {
           background-image: none;
           background-color: #2979ff;
         }
@@ -26,21 +26,21 @@
     }
   }
 }
-.inputSearchColor{
+.inputSearchColor {
   background-color: #455a64 !important;
   color: white !important;
-  &::placeholder{
+  &::placeholder {
     color: #92a9b4;
   }
   border: none;
   outline: 0;
 }
-@media (min-width: 320px) and (max-width: 767.98px) { 
-  .navbar{
+@media (min-width: 320px) and (max-width: 767.98px) {
+  .navbar {
     padding: 8px;
-    .navbar-toggler{
+    .navbar-toggler {
       background-color: white !important;
-      .navbar-toggler-icon{
+      .navbar-toggler-icon {
         background-color: white !important;
       }
     }

@@ -1,5 +1,5 @@
-.banner{
-  .jumbotron{
+.banner {
+  .jumbotron {
     object-fit: contain;
     display: flex;
     align-items: flex-start;
@@ -9,27 +9,27 @@
     background-size: cover;
     height: 400px;
     background-color: black;
-    .banner_wrapper{
+    .banner_wrapper {
       padding: 10px;
     }
-    .welcome{
+    .welcome {
       color: white;
       font-weight: 700;
-      font-size: unquote("min(max(2rem, 5vw), 40px)");
+      font-size: unquote('min(max(2rem, 5vw), 40px)');
     }
-    .desc{
+    .desc {
       color: white;
-      font-size: unquote("min(max(1.4rem, 1vw), 25px)");
+      font-size: unquote('min(max(1.4rem, 1vw), 25px)');
       font-weight: 600;
     }
-    .banner_search{
+    .banner_search {
       padding: 10px;
       width: 60%;
-      .banner_form{
+      .banner_form {
         background-color: white;
         border-radius: 35px;
         display: flex;
-        input{
+        input {
           padding: 10px;
           flex: 1;
           outline: 0;
@@ -37,7 +37,7 @@
           border-top-left-radius: 35px;
           border-bottom-left-radius: 35px;
         }
-        button{
+        button {
           background-color: #c53030;
           outline: 0;
           border: none;
@@ -48,33 +48,33 @@
           color: white;
           font-size: 18px;
           font-weight: 400;
-          &:hover{
+          &:hover {
             color: black;
-            transition: all .3s ease-in-out;
-          }  
+            transition: all 0.3s ease-in-out;
+          }
         }
       }
     }
   }
 }
-@media (min-width: 320px) and (max-width: 576.98px) { 
-  .banner{
-    .jumbotron{
-      .banner_search{
-        .banner_form{
-          button{
+@media (min-width: 320px) and (max-width: 576.98px) {
+  .banner {
+    .jumbotron {
+      .banner_search {
+        .banner_form {
+          button {
             width: 80px;
             font-size: 14px;
-          }  
+          }
         }
       }
     }
   }
 }
-@media (min-width: 320px) and (max-width: 768.98px) { 
-  .banner{
-    .jumbotron{
-      .banner_search{
+@media (min-width: 320px) and (max-width: 768.98px) {
+  .banner {
+    .jumbotron {
+      .banner_search {
         width: 100%;
       }
     }

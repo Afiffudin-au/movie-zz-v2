@@ -1,13 +1,9 @@
 import React from 'react'
 import './HorizontalContainer.scss'
-function HorizontalContainer({children}) {
+function HorizontalContainer({ children }) {
   return (
-    <div className="horizontalContainer">
-      <div className="horizontalContainer-items">
-        {
-          children
-        }
-      </div>
+    <div className='horizontalContainer'>
+      <div className='horizontalContainer-items'>{children}</div>
     </div>
   )
 }

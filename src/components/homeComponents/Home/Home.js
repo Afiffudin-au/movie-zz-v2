@@ -8,13 +8,13 @@ import TvToWatchGroup from '../TvToWatchGroup/TvToWatchGroup'
 function Home() {
   return (
     <>
-     <Banner/> 
+      <Banner />
 
-     <PopularGroup/>
-     <MovieToWatchGroup/>
-     <TvToWatchGroup/>
+      <PopularGroup />
+      <MovieToWatchGroup />
+      <TvToWatchGroup />
 
-     <AllMovies/> 
+      <AllMovies />
     </>
   )
 }

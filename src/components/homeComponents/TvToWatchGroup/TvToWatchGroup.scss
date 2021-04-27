@@ -1,27 +1,26 @@
-.tvToWatchGroup{
+.tvToWatchGroup {
   padding: 10px;
-  .tvToWatchGroupWrap{
+  .tvToWatchGroupWrap {
     display: flex;
     align-items: center;
-    h1{
+    h1 {
       font-weight: 600;
       font-size: 25px;
     }
-    .MuiBottomNavigation-root{
-      .MuiButtonBase-root.MuiBottomNavigationAction-root.Mui-selected{
+    .MuiBottomNavigation-root {
+      .MuiButtonBase-root.MuiBottomNavigationAction-root.Mui-selected {
         color: #448aff !important;
       }
-      button{
+      button {
         color: #607d8b;
         outline: 0;
       }
     }
-   
   }
 }
-@media (min-width: 320px) and (max-width: 768.98px) { 
-  .tvToWatchGroup{
-    .tvToWatchGroupWrap{
+@media (min-width: 320px) and (max-width: 768.98px) {
+  .tvToWatchGroup {
+    .tvToWatchGroupWrap {
       flex-direction: column;
     }
   }

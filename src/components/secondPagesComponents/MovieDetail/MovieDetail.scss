@@ -4,68 +4,72 @@
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: contain;
-  .movieDetail__customBg{
-  background-image: linear-gradient(to right, rgba(12.94%, 14.90%, 22.75%, 1.00) 150px, rgba(20.39%, 22.35%, 29.02%, 0.84) 100%);
+  .movieDetail__customBg {
+    background-image: linear-gradient(
+      to right,
+      rgba(12.94%, 14.9%, 22.75%, 1) 150px,
+      rgba(20.39%, 22.35%, 29.02%, 0.84) 100%
+    );
   }
-  .movieDetail__content{
+  .movieDetail__content {
     display: flex;
     padding: 3rem;
     gap: 1.25rem;
     align-items: center;
-    .movieDetail__img{
+    .movieDetail__img {
       max-width: 320px;
-      .img{
+      .img {
         width: 100%;
-        border-radius: .5rem;
+        border-radius: 0.5rem;
       }
     }
   }
-  .movieDetail__contentText{
-    .movieDetail__genre{
+  .movieDetail__contentText {
+    .movieDetail__genre {
       display: flex;
-      p{
-        margin-right: .5rem;
+      p {
+        margin-right: 0.5rem;
       }
     }
-    h1{
+    h1 {
       font-weight: 800;
       font-size: 25px;
       color: white;
       margin-bottom: 10px;
     }
-    p{
-    margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 16px;
-    color: white; 
-  }
-  strong{
-    font-style: italic;
-    margin-bottom: 10px;
-    color: rgb(223, 223, 223);
-    font-weight: 500;
-    font-size: 18px;
-  }
-  .watchButton{
-    color: white;
-    background-color: #2196f3;
-    padding: 10px;
-    border-radius: 5px;
-    outline: 0;
-    font-weight: 500;
-    &:hover{
-      background-color: #1e88e5;
+    p {
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: 16px;
+      color: white;
+    }
+    strong {
+      font-style: italic;
+      margin-bottom: 10px;
+      color: rgb(223, 223, 223);
+      font-weight: 500;
+      font-size: 18px;
+    }
+    .watchButton {
+      color: white;
+      background-color: #2196f3;
+      padding: 10px;
+      border-radius: 5px;
+      outline: 0;
+      font-weight: 500;
+      &:hover {
+        background-color: #1e88e5;
+      }
     }
   }
-  }
 }
-@media(min-width : 700px){
-  .movieDetail__customBg{
+@media (min-width: 700px) {
+  .movieDetail__customBg {
     height: 100vh !important;
   }
 }
-@media(max-width : 700px){
-  .movieDetail__content{
-   flex-direction: column;
+@media (max-width: 700px) {
+  .movieDetail__content {
+    flex-direction: column;
   }
 }
