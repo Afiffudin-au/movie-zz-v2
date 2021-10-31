@@ -10,7 +10,7 @@ function MovieDetail() {
     <div
       className='movieDetail'
       style={{
-        backgroundImage: `url(${process.env.REACT_APP_POSTER_URL}${details.backdrop_path})`,
+        backgroundImage: `url(${process.env.REACT_APP_POSTER_URL_2ND}${details.backdrop_path})`,
       }}>
       {loading && <StyledLinearProgress />}
       <div className='movieDetail__customBg'>
@@ -19,7 +19,7 @@ function MovieDetail() {
             <LazyLoad width={300} height={400} debounce={false}>
               <img
                 className='max-w-screen-xs rounded-lg'
-                src={`${process.env.REACT_APP_POSTER_URL}${details.poster_path}`}
+                src={`${process.env.REACT_APP_POSTER_URL_2ND}${details.poster_path}`}
                 alt=''
               />
             </LazyLoad>
