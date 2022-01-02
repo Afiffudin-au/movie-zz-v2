@@ -29,15 +29,13 @@ function Banner() {
     history.push('/search-result')
   }
   return (
-    <div className='banner'>
-      <div className='jumbotron jumbotron-fluid'>
-        <div className='banner_wrapper'>
-          <h1 className='welcome'>Welcome.</h1>
-          <p className='desc'>
-            Millions of movies, TV shows and people to discover. Explore now.
-          </p>
-        </div>
-        <div className='banner_search'>
+    <div className='jumbotron jumbotron-fluid'>
+      <div className='container'>
+        <h1 className='welcome'>Welcome.</h1>
+        <p className='desc'>
+          Millions of movies, TV shows and people to discover. Explore now.
+        </p>
+        <div className='banner_search mt-5'>
           <form className='banner_form' onSubmit={handleSubmit}>
             <input
               aria-label='input search'

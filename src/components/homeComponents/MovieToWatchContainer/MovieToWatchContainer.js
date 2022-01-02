@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectMovieToWatchBlocks } from '../../../features/movieSlice'
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
-import Card from '../../usedAnyComponents/Card/Card'
+import Card from '../../any/Card/Card'
 import HorizontalContainer from '../HorizontalContainer/HorizontalContainer'
 import './MovieToWatchContainer.scss'
 function MovieToWatchContainer() {

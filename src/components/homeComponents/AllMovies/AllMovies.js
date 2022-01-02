@@ -3,7 +3,7 @@ import { useGetAllMovie } from '../../../useAllMovie/useGetAllMovie'
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import Pagination from '@material-ui/lab/Pagination'
 import './AllMovies.scss'
-import Card from '../../usedAnyComponents/Card/Card'
+import Card from '../../any/Card/Card'
 function AllMovies() {
   const { getAllMovie, loading, dataMovies, url } = useGetAllMovie()
   const refGetAllMovie = useRef(getAllMovie)

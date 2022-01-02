@@ -1,18 +1,14 @@
 import React from 'react'
 import './TvShow.scss'
-import Card from '../../usedAnyComponents/Card/Card'
+import Card from '../../any/Card/Card'
 import { selectTvShowBlocks } from '../../../features/movieSlice'
 import { useSelector } from 'react-redux'
 import Pagination from '@material-ui/lab/Pagination'
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import { useGetTvShow } from '../../../useTvShows/useGetTvShows'
 function TvShow() {
-  const {
-    getTvPopular,
-    getTvAiringToday,
-    getTvLatest,
-    getTvTopRated,
-  } = useGetTvShow()
+  const { getTvPopular, getTvAiringToday, getTvLatest, getTvTopRated } =
+    useGetTvShow()
   const { tvShows, loading, url } = useSelector(selectTvShowBlocks)
   const [pages, setPages] = React.useState(1)
   const { total_pages } = tvShows

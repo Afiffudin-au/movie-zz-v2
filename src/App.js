@@ -4,7 +4,7 @@ import './App.scss'
 import Home from './components/homeComponents/Home/Home'
 import MovieDetail from './components/secondPagesComponents/MovieDetail/MovieDetail'
 import SearchResult from './components/secondPagesComponents/SearchResult/SearchResult'
-import Navbar from './components/usedAnyComponents/Navbar/Navbar'
+import Navbar from './components/any/Navbar/Navbar'
 import Movie from './components/secondPagesComponents/Movie/Movie'
 import TvShow from './components/secondPagesComponents/TvShow/TvShow'
 function App() {

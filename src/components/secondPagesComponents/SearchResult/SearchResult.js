@@ -4,7 +4,7 @@ import {
   selectSearchResultBlocks,
   selectUrlParamsBlock,
 } from '../../../features/movieSlice'
-import Card from '../../usedAnyComponents/Card/Card'
+import Card from '../../any/Card/Card'
 import { StyledLinearProgress } from '../../extraComponents/LoadingProgress/LoadingProgress'
 import './SearchResult.scss'
 import { useGetSearch } from '../../../useSearch/useGetSearch'

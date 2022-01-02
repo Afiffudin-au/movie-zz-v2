@@ -4,6 +4,7 @@ import './Navbar.scss'
 import NavbarSearch from './NavbarSearch/NavbarSearch'
 import { useGetMovies } from '../../../useMovies/useGetMovies'
 import { useGetTvShow } from '../../../useTvShows/useGetTvShows'
+import MenuIcon from '@material-ui/icons/Menu'
 function Navbar() {
   const {
     getMoviePopular,
@@ -11,23 +12,19 @@ function Navbar() {
     getMovieUpcoming,
     getMovieTopRated,
   } = useGetMovies()
-  const {
-    getTvPopular,
-    getTvAiringToday,
-    getTvLatest,
-    getTvTopRated,
-  } = useGetTvShow()
+  const { getTvPopular, getTvAiringToday, getTvLatest, getTvTopRated } =
+    useGetTvShow()
   return (
     <nav className='navbar navbar-expand-md navbar-light bg-light'>
       <button
-        className='navbar-toggler'
+        className='navbar-toggler ml-auto'
         type='button'
         data-toggle='collapse'
         data-target='#navbarNavDropdown'
         aria-controls='navbarNavDropdown'
         aria-expanded='false'
         aria-label='Toggle navigation'>
-        <span className='navbar-toggler-icon'></span>
+        <MenuIcon style={{ fontSize: '32px', color: 'white' }} />
       </button>
       <div className='collapse navbar-collapse' id='navbarNavDropdown'>
         <ul className='navbar-nav'>
@@ -123,7 +120,7 @@ function Navbar() {
             <div
               className='dropdown-menu'
               aria-labelledby='navbarDropdownMenuLink'>
-              <Link to='/icon-all' className='dropdown-item'>
+              <Link to='/' className='dropdown-item'>
                 Popular People
               </Link>
             </div>

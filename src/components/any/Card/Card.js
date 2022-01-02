@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import LazyLoad from 'react-lazyload'
 import StarRateIcon from '@material-ui/icons/StarRate'
 import { amber } from '@material-ui/core/colors'
 import './Card.scss'
@@ -32,20 +31,18 @@ function Card({
     <div className='Card' style={styleProps}>
       <div onClick={handleDetail} className='Card-content'>
         {!imageLoaded && <img src='/220x330.png' alt='' />}
-        <LazyLoad width={150} height={200} once={false}>
-          <LightTooltip
-            enterDelay={10}
-            title={originalTitle || ''}
-            placement='top'
-            arrow>
-            <img
-              onLoad={handleImageLoad}
-              style={{ display: display }}
-              src={posterPath}
-              alt={posterPath}
-            />
-          </LightTooltip>
-        </LazyLoad>
+        <LightTooltip
+          enterDelay={10}
+          title={originalTitle || ''}
+          placement='top'
+          arrow>
+          <img
+            onLoad={handleImageLoad}
+            style={{ display: display }}
+            src={posterPath}
+            alt={posterPath}
+          />
+        </LightTooltip>
         <div className='Card_desc'>
           <h1>{originalTitle}</h1>
           <p>{releaseDate}</p>
