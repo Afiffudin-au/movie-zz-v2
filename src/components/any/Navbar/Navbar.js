@@ -17,6 +17,9 @@ function Navbar() {
     useGetTvShow()
   return (
     <nav className='navbar navbar-expand-md navbar-light bg-light'>
+      <Link to='/' className='custom-brand navbar-brand'>
+        MZ
+      </Link>
       <button
         className='navbar-toggler ml-auto'
         type='button'
