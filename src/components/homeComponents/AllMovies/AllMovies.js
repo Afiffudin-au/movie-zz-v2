@@ -8,8 +8,12 @@ function AllMovies() {
   const { getAllMovie, loading, dataMovies, url } = useGetAllMovie()
   const refGetAllMovie = useRef(getAllMovie)
   const [pages, setPages] = React.useState(1)
-  const { total_pages } = dataMovies
+  const total_pages =
+    dataMovies.total_pages > 100 ? 100 : dataMovies.total_pages
   const handleChange = (event, value) => {
+    if (value > total_pages) {
+      return
+    }
     setPages(value)
     getAllMovie(value)
   }

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.scss'
@@ -29,16 +30,15 @@ function Navbar() {
       <div className='collapse navbar-collapse' id='navbarNavDropdown'>
         <ul className='navbar-nav'>
           <li className='nav-item dropdown'>
-            <Link
-              to='/'
+            <a
               className='nav-link dropdown-toggle'
               href='#'
-              id='navbarDropdownMenuLink'
+              id='navbarDropdown'
+              role='button'
               data-toggle='dropdown'
-              aria-haspopup='true'
               aria-expanded='false'>
               Movies
-            </Link>
+            </a>
             <div
               className='dropdown-menu'
               aria-labelledby='navbarDropdownMenuLink'>
@@ -69,15 +69,15 @@ function Navbar() {
             </div>
           </li>
           <li className='nav-item dropdown'>
-            <Link
-              to='/'
+            <a
               className='nav-link dropdown-toggle'
-              id='navbarDropdownMenuLink'
+              href='#'
+              id='navbarDropdown'
+              role='button'
               data-toggle='dropdown'
-              aria-haspopup='true'
               aria-expanded='false'>
               Tv Shows
-            </Link>
+            </a>
             <div
               className='dropdown-menu'
               aria-labelledby='navbarDropdownMenuLink'>
@@ -108,15 +108,15 @@ function Navbar() {
             </div>
           </li>
           <li className='nav-item dropdown'>
-            <Link
-              to='/'
+            <a
               className='nav-link dropdown-toggle'
-              id='navbarDropdownMenuLink'
+              href='#'
+              id='navbarDropdown'
+              role='button'
               data-toggle='dropdown'
-              aria-haspopup='true'
               aria-expanded='false'>
               People
-            </Link>
+            </a>
             <div
               className='dropdown-menu'
               aria-labelledby='navbarDropdownMenuLink'>

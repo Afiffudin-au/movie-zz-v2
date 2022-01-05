@@ -11,8 +11,11 @@ function TvShow() {
     useGetTvShow()
   const { tvShows, loading, url } = useSelector(selectTvShowBlocks)
   const [pages, setPages] = React.useState(1)
-  const { total_pages } = tvShows
+  const total_pages = tvShows.total_pages > 100 ? 100 : tvShows.total_pages
   const handleChange = (event, value) => {
+    if (value > total_pages) {
+      return
+    }
     setPages(value)
     if (url === process.env.REACT_APP_TV_POPULAR) {
       getTvPopular(value)

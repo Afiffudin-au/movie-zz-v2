@@ -15,8 +15,11 @@ function Movie() {
   } = useGetMovies()
   const { movies, loading, url } = useSelector(selectMoviesBlocks)
   const [pages, setPages] = React.useState(1)
-  const { total_pages } = movies
+  const total_pages = movies.total_pages > 100 ? 100 : movies.total_pages // limit total pages
   const handleChange = (event, value) => {
+    if (value > total_pages) {
+      return
+    }
     setPages(value)
     if (url === process.env.REACT_APP_MOVIE_POPULAR_URL) {
       getMoviePopular(value)
