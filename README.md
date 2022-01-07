@@ -1,3 +1,6 @@
+## Desc
+Hi all! this is a project called "movie" (react-version). This application contains popular movies, movies worth watching, tv shows, popular movies, details and much more. These are all taken from themoviedb.org API. this application has a very light and fast performance, equipped with multi search features, and a very simple UI display. This app is made with React and Redux. Most of my projects are of the private type, but for now and so on I will make my projects public freely.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
